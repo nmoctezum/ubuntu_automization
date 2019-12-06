@@ -1,6 +1,7 @@
 ---
-- name: Instala java
+- name: Instalar java
   hosts: all
+  become: True
   gather_facts: no
   tasks:
   - name: agregar repositorios
