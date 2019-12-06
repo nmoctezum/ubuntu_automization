@@ -1,6 +1,6 @@
 ---
 - name: cambiar wallpaper
-  hosts: client
+  hosts: all
   tasks:
   - name: get wallpaper | sustituir por get url 
     become: true

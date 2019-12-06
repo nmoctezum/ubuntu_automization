@@ -1,6 +1,6 @@
 ---
 - name: Instala SAP 
-  hosts: client
+  hosts: all
   tasks:
   - name: create directory pemex
     become: true

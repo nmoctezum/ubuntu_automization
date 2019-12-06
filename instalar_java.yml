@@ -1,6 +1,6 @@
 ---
 - name: Instala java
-  hosts: client
+  hosts: all
   tasks:
   - name: agregar repositorios
     expect: 
