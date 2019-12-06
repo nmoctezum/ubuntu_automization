@@ -28,7 +28,7 @@
       src: /pemex/SAPClients.tar.gz
       dest: /opt/
       remote_src: yes
-  - name: mueve a opt
-    shell: mv /pemex/SAPClients /opt
+#  - name: mueve a opt
+#    shell: mv /pemex/SAPClients /opt
   - name: remove tar
     shell: rm /pemex/sap.tar.gz
