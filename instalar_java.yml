@@ -1,6 +1,7 @@
 ---
 - name: Instala java
   hosts: all
+  gather_facts: no
   tasks:
   - name: agregar repositorios
     expect: 

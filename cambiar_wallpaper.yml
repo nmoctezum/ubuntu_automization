@@ -1,6 +1,7 @@
 ---
 - name: cambiar wallpaper
   hosts: all
+  gather_facts: no
   tasks:
   - name: get wallpaper | sustituir por get url 
     become: true

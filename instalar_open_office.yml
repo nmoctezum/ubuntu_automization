@@ -1,6 +1,7 @@
 ---
 - name: Instala OpenOffice 
   hosts: all
+  gather_facts: no
   tasks:
   - name: create directory pemex
     become: true
