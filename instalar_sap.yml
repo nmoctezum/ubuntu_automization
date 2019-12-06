@@ -31,4 +31,6 @@
 #  - name: mueve a opt
 #    shell: mv /pemex/SAPClients /opt
   - name: remove tar
-    shell: rm /pemex
+    file:
+        path: "/pemex"
+        state: absent
