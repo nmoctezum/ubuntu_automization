@@ -32,5 +32,5 @@
 #    shell: mv /pemex/SAPClients /opt
   - name: remove tar
     file:
-        path: "/pemex"
-        state: absent
+      path: "/pemex"
+      state: absent
