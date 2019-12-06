@@ -1,0 +1,9 @@
+---
+- name: cambiar wallpaper
+  hosts: client
+  tasks:
+  - name: get wallpaper | sustituir por get url 
+    become: true
+    shell: wget http://192.168.122.246/RedHat.png -O /pemex/wall.png
+  - name: gsettings | cambiar por gsetting
+    shell: gsettings set org.gnome.desktop.background picture-uri "file:///pemex/wall.png"

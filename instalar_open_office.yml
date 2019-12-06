@@ -1,0 +1,28 @@
+---
+- name: Instala OpenOffice 
+  hosts: client
+  tasks:
+  - name: create directory pemex
+    become: true
+    file:
+      path: /pemex
+      state: directory
+      mode: '0755'
+  - name: download office
+    shell: wget http://192.168.122.246/Apache_OpenOffice_4.1.7_Linux_x86_install-deb_es.tar.gz -O /pemex/office.tar.gz
+  - name: untar
+    shell: tar xzvf office.tar.gz
+    args:
+      chdir: /pemex
+  - name: install general
+    shell: dpkg -i *.deb 
+    args:
+      chdir: /pemex/es/DEBS
+  - name: install desktop
+    shell: dpkg -i *.deb
+    args:
+      chdir: /pemex/es/DEBS/desktop-integration
+  - name: remove
+    shell: rm -r /pemex/es
+  - name: remove tar
+    shell: rm /pemex/office.tar.gz

@@ -1,0 +1,22 @@
+---
+- name: Instala java
+  hosts: client
+  tasks:
+  - name: agregar repositorios
+    expect: 
+      command: add-apt-repository ppa:webupd8team/java 
+      responses: 
+        'Press \[ENTER\] to continue or Ctrl\-c to cancel adding it.': ''
+  - name: apt update
+    shell: apt update
+  - name: install by apt
+    apt:
+      name: openjdk-8-jdk
+      state: present
+#  - name: install java
+#    expect:
+#      command: apt install openjdk-8-jdk
+#      responses:
+#        Question:
+#          - 'Do you want to continue\? \[Y\/N\] ': 'Y'
+#          - 'Do you want to continue\? \[Y\/N\] ': 'Y'
