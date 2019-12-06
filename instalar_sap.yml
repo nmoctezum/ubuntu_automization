@@ -1,6 +1,7 @@
 ---
 - name: Instala SAP 
   hosts: all
+  become: true
   gather_facts: no
   tasks:
   - name: create directory pemex
