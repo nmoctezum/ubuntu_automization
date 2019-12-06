@@ -11,6 +11,8 @@
         'Press \[ENTER\] to continue or Ctrl\-c to cancel adding it.': ''
   - name: apt update
     shell: apt update
+  - name: Aceptar la licencia de java
+    shell: 'echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections'
   - name: install by apt
     apt:
       name: openjdk-8-jdk
