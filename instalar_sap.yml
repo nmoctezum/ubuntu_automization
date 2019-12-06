@@ -14,20 +14,20 @@
       url: http://{{ repo_host }}/files/SAPClients.tar.gz
       dest: /pemex/SAPClients.tar.gz
       mode: '0440'
-  - name: Decomprimir
-    unarchive:
-      src: /pemex/SAPClients.tar.gz
-      dest: /opt/
-      remote_src: yes
   - name: Download SAP
     get_url:
       url: http://{{ repo_host }}/files/PlatinGUI750_PL1_for_Linux.JAR
       dest: /pemex/PlatinGUI750_PL1_for_Linux.JAR
       mode: '0440'
   - name: install general
-    shell: java -jar PlatinGUI750_PL1_for_Linux.JAR
+    shell: "java -jar PlatinGUI750_PL1_for_Linux.JAR --nogui"
     args:
       chdir: /pemex
+  - name: Decomprimir
+    unarchive:
+      src: /pemex/SAPClients.tar.gz
+      dest: /opt/
+      remote_src: yes
   - name: mueve a opt
     shell: mv /pemex/SAPClients /opt
   - name: remove tar
