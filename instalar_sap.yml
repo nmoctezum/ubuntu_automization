@@ -11,8 +11,8 @@
       mode: '0755'
   - name: Download SAP ZIP
     get_url:
-      url: http://{{ repo_host }}/files/SAPClients.tar.xz
-      dest: /pemex/SAPClients.tar.xz
+      url: http://{{ repo_host }}/files/SAPClients.tar.gz
+      dest: /pemex/SAPClients.tar.gz
       mode: '0440'
   - name: Decomprimir
     unarchive:
@@ -31,4 +31,4 @@
   - name: mueve a opt
     shell: mv /pemex/SAPClients /opt
   - name: remove tar
-    shell: rm /pemex/sap.tar.xz
+    shell: rm /pemex/sap.tar.gz
