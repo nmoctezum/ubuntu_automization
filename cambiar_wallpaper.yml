@@ -4,6 +4,6 @@
   tasks:
   - name: get wallpaper | sustituir por get url 
     become: true
-    shell: wget http://192.168.122.246/RedHat.png -O /pemex/wall.png
+    shell: wget http://{{ repo_host }}/files/1.png -O /tmp/wall.png
   - name: gsettings | cambiar por gsetting
-    shell: gsettings set org.gnome.desktop.background picture-uri "file:///pemex/wall.png"
+    shell: gsettings set org.gnome.desktop.background picture-uri "file:///tmp/wall.png"
