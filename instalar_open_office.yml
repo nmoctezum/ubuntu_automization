@@ -16,10 +16,6 @@
     shell: tar xzvf office.tar.gz
     args:
       chdir: /pemex
-#  - name: install general
-#    shell: dpkg -i *.deb 
-#    args:
-#      chdir: /pemex/es/DEBS
   - name: install desktop
     shell: dpkg -i *.deb
     args:
