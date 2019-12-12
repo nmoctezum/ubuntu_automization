@@ -6,8 +6,15 @@
   tasks:
   - name: apt update
     shell: apt update
-  - name: install by apt
+  - name: install by apt java
     apt:
       name: openjdk-8-jre-headless
       state: present
-
+  - name: install by apt javafx
+    apt:
+      name: openjfx
+      state: present
+  - name: copy javafx conf
+    copy:
+      src: javafx.properties
+      dest: /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/
